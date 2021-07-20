@@ -37,6 +37,7 @@ public class UnitDetector : MonoBehaviour
 
         _baseParent = transform.parent;
         capsuleColliderSize = _cc.size;
+        _rigidBody.gravityScale = _entity.Gravity;
     }
 
     public void Move(){

@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class HurtState : BaseState, IState
 {
+    const string ANIMATION_DEAD = "Dead";
     float timeToEnd = 0.3f;
     public HurtState(Entity gameObject) : base(gameObject){}
     public void OnEnter(){
-        timeToEnd = Player.Instance.TimerOfBeeingHit;
-        PlayerAnimator.Instance.SetTrigger("Dead");
+        timeToEnd =  _entity.TimerOfBeeingHit;
+        AnimatorExt.SetTrigger(ANIMATION_DEAD);
     }
     public void OnExit(){}
     public override void HandleInput(){}

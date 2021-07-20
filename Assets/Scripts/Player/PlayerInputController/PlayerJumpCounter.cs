@@ -1,22 +1,24 @@
-
-
 using UnityEngine;
 
-public static class  PlayerJumpCounter{
+public interface IJumpCounter {
+    void HitGround();
+    bool CanJump();
+    void Update();
+}
 
-    static int framesSincePlayerWasOnGround = 0;
-    static int MaxJumpDelay = 30;
+public class PlayerJumpCounter : IJumpCounter{
+    int framesSincePlayerWasOnGround = 0;
+    int MaxJumpDelay = 30;
 
-    public static void HitGround(){
+    public void HitGround(){
         framesSincePlayerWasOnGround = 0;
     }
 
-    public static bool CanJump(){
-        Debug.Log(framesSincePlayerWasOnGround);
+    public bool CanJump(){
         return framesSincePlayerWasOnGround < MaxJumpDelay;
     }
 
-    public static void Update(){
+    public void Update(){
         framesSincePlayerWasOnGround += 1;
     }
 

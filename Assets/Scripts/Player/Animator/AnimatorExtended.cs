@@ -1,10 +1,8 @@
 using UnityEngine;
 
 public class AnimatorExtended : MonoBehaviour{
-
-    [SerializeField] private Transform _detector;
+    [SerializeField] private Transform _physicUnit;
     [SerializeField] private float _smoothTime;
-
     [SerializeField] private Animator _animator;
 
     private Vector3 _animationVel;
@@ -39,7 +37,7 @@ public class AnimatorExtended : MonoBehaviour{
     {
         if( EnableFollowing ){
             transform.position = Vector3.SmoothDamp( transform.position, 
-                                                    _detector.position, 
+                                                    _physicUnit.position, 
                                                     ref _animationVel, 
                                                     _smoothTime);
         }

@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class FSM
+﻿public class FSM
 {
     public IState _state;
 
@@ -22,10 +18,7 @@ public class FSM
         _state.FixedUpdate();
     }
 
-    public void OnNotify(GameEvent newEvent)
-    {
-
-    }
+    public void OnNotify(GameEvent newEvent){}
 
     public void ChangeToState(IState newState)
     {
